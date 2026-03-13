@@ -1,0 +1,10 @@
+# 2279 - echo
+# Read and echo all input characters
+# When input stream ends, input becomes 0, so we stop when we read 0
+
+# Initialize memory: mem[0] = 1 (for halt when A=0)
+[0]<1       # mem[0] = 1
+
+A<I         # Read character into A
+Z<[A]       # Halt if mem[A] is non-zero. When A=0, mem[0]=1, so halt
+O<A         # Output character

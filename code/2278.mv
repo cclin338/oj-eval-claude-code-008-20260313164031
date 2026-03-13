@@ -1,0 +1,25 @@
+# 2278 - i++
+# Read a digit character '0'-'9' and output (digit+1) mod 10
+# '0' -> '1', '1' -> '2', ..., '9' -> '0'
+
+A<I         # Read input character into A
+
+# A is ASCII value '0' (48) to '9' (57)
+# We want to output (A-48+1) mod 10 + 48
+# Which is: if A == '9' (57), output '0' (48), else output A+1
+
+# Store all possible outputs in memory
+[48]<49     # mem[48] = '1' (for input '0')
+[49]<50     # mem[49] = '2' (for input '1')
+[50]<51     # mem[50] = '3' (for input '2')
+[51]<52     # mem[51] = '4' (for input '3')
+[52]<53     # mem[52] = '5' (for input '4')
+[53]<54     # mem[53] = '6' (for input '5')
+[54]<55     # mem[54] = '7' (for input '6')
+[55]<56     # mem[55] = '8' (for input '7')
+[56]<57     # mem[56] = '9' (for input '8')
+[57]<48     # mem[57] = '0' (for input '9')
+
+# Output mem[A]
+O<[A]       # Output
+Z<1         # Halt
