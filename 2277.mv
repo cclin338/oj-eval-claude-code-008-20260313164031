@@ -1,0 +1,20 @@
+# 2277 - if else
+# Read two ASCII characters and check if they are equal
+# Output '1' if equal, '0' if not equal
+
+A<I         # Read first character into A
+B<I         # Read second character into B
+
+# Store '0' and '1' in memory
+[0]<48      # '0' character at mem[0]
+[1]<49      # '1' character at mem[1]
+
+# Mark position A in memory with value 1
+[A]<1       # mem[A] = 1
+
+# Read from position B - will be 1 if A==B, 0 otherwise
+C<[B]       # C = mem[B]
+
+# Output mem[C] which is '0' or '1'
+O<[C]       # Output
+Z<1         # Halt

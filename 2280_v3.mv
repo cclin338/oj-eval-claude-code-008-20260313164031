@@ -1,0 +1,30 @@
+# 2280 - printf (computational approach)
+# Idea: Use memory as program state, and program looping for control flow
+
+# State machine:
+# Stage 0: Read input, setup
+# Stage 1: Output hundreds digit if needed
+# Stage 2: Output tens digit
+# Stage 3: Output ones digit
+# Stage 4: Halt
+
+# mem[0] = current stage
+# mem[1] = remaining value
+# mem[2] = digit counter
+
+[0]<0       # Stage = 0
+
+# Read input (only on first loop when stage=0)
+A<I
+[1]<A       # Store value
+
+# Increment stage
+A<[0]
+A<A+1
+[0]<A
+
+# Now check stage and act accordingly
+# Use jump table: mem[stage+10] contains the next actions
+
+# This is getting too complex for mov language
+# Let me try a direct table lookup instead
