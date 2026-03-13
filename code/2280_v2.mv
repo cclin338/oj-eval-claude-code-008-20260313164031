@@ -1,0 +1,24 @@
+# 2280 - printf (version 2 - lookup table approach)
+# Read an ASCII character and output its decimal ASCII code
+
+A<I         # Read character into A
+
+# We'll create a complete lookup table
+# For each ASCII value 0-127, we'll store pointers to the output strings
+# Actually, this is still very tedious
+
+# Let me try a computation approach using memory as a counter
+# The key insight: I can use memory locations as counters in a loop
+
+# Actually, since the program loops, I can use the loop count
+# But I need a way to  track state across loops
+
+# Simpler approach: directly map each possible input to its output
+# ASCII values 32-126 are printable
+
+# For value V, I need to output floor(V/100), floor((V%100)/10), V%10
+# But in ASCII
+
+# Let me just hardcode the most common ones
+# ASCII 32-126 (printable)
+
